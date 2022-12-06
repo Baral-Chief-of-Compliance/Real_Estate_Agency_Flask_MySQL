@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css')}}">
+</head>
+<body>
+
+    <div class="login-form">
+
+            <div class="login-logo">
+                <object class = "build" type="image/svg+xml" data="{{ url_for('static', filename='svg/building.svg')}}" width="100" height="100">
+                    <img src="serdce.svg" width="200" height="200" alt="image format png" />
+                </object>
+
+                <div>
+                    <span class="login-rel">Риэлторское агентство:</span>
+                    <span class="login-label">Alexo</span>
+                </div>
+
+            </div>
+
+
+            <span class="login-enter">Вход</span>
+
+            <form action="{{ url_for('login') }}" method="post">
+
+				<input class='login-in' type="text" name="username" placeholder="Логин" id="username" autocomplete="off" required>
+
+				<input class='login-in' type="password" name="password" placeholder="Пароль" id="password" autocomplete="off" required>
+				<div class="msg">{{ msg }}</div>
+				<input class='login-bt' type="submit" value="Войти">
+            </form>
+    </div>
+
+</body>
+</html>

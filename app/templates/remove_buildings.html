@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Удалить объект недвижимости</h1>
+    <form action="{{ url_for('remove_building') }}" method="post" autocomplete="off">
+
+        <input name="buildings" list="buildings" placeholder="Объект"/>
+
+        <datalist id = "buildings">
+            {% for build in buildings %}
+                <option value="{{ build[0], build[1] }}" />
+            {% endfor %}
+        </datalist>
+
+        <input type="submit" value="Удалить объект">
+    </form>
+
+{% endblock %}

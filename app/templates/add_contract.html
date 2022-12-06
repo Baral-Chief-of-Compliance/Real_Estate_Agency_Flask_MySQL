@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Добавить договор</h1>
+    <form action="{{ url_for('add_contract') }}" method="post" autocomplete="off">
+
+        <input name="clients" list="clients" placeholder="Клиент" />
+
+        <datalist id = "clients">
+            {% for client in clients %}
+                <option value="{{
+                                    client[0],
+                                    client[1],
+                                    client[2],
+                                    client[3],
+                                    client[4]
+                                    }}" />
+            {% endfor %}
+        </datalist>
+
+        <input type="date" value name="c_date_of_start">
+
+        <input type="date" value name="c_date_of_end">
+
+        <input type="submit" value="Добавить договор">
+    </form>
+
+{% endblock %}

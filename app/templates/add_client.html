@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Добавление Клиента</h1>
+    <form action="{{ url_for('add_client') }}" method="post" autocomplete="off">
+<!--				<label for="username">-->
+<!--					<i class="fas fa-user"></i>-->
+<!--				</label>-->
+				<input type="text" name="cl_name" placeholder="Имя" id="cl_name" required>
+<!--				<label for="password">-->
+<!--					<i class="fas fa-lock"></i>-->
+<!--				</label>-->
+				<input type="text" name="cl_surname" placeholder="Фамилия" id="cl_surname" required>
+
+				<input type="text" name="cl_patronymic" placeholder="Отчество" id="cl_patronymic" required>
+
+				<input type="text" name="cl_pasport_number" placeholder="Номер паспорта" id="cl_pasport_number" required>
+
+				<input type="text" name="cl_pasport_series" placeholder="Серия паспорта" id="cl_pasport_series" required>
+
+				<input type="date" name="cl_date_of_birth" placeholder="Дата рождения" id="cl_date_of_birth" required>
+
+				<input type="text" name="cl_papsort_issued_by" placeholder="Кем выдан паспорт" id="cl_papsort_issued_by" required>
+
+				<input type="text" name="cl_pasport_registration" placeholder="Адрес прописки" id="cl_pasport_registration" required>
+
+				<input type="date" name="cl_pasport_date_of_issue" placeholder="Дата выдачи" id="cl_pasport_date_of_issue" required>
+
+				<input type="text" name="cl_ph_number" placeholder="Номер телефона" id="cl_ph_number" required>
+
+				<div class="msg">{{ msg }}</div>
+				<input type="submit" value="Добавить клиента">
+    </form>
+{% endblock %}

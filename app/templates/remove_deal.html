@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Удалить сделку</h1>
+    <form action="{{ url_for('remove_deal') }}" method="post" autocomplete="off">
+
+        <input name="deals" list="deals" placeholder="Сделка"/>
+
+        <datalist id = "deals">
+            {% for deal in deals %}
+                <option value="{{
+                                    deal[0],
+                                    deal[1],
+                                    deal[2],
+                                    deal[3],
+                                    deal[4],
+                                    deal[5],
+                                    deal[6],
+                                    deal[7],
+                                    deal[8]
+                                    }}" />
+            {% endfor %}
+        </datalist>
+
+        <input type="submit" value="Удалить сделку">
+    </form>
+
+{% endblock %}

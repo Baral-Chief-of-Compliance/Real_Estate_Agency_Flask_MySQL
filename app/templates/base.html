@@ -1,0 +1,32 @@
+<html>
+    <head>
+        {% if title %}
+        <title>{{ title }} - Alexo</title>
+        {% else %}
+        <title>Alexo</title>
+        {% endif %}
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css')}}">
+    </head>
+
+
+    <body>
+        <div class="navigation">
+            <a href="{{ url_for('home') }}">Главная</a>
+            <a href="{{ url_for('clients') }}">Клиенты</a>
+            <a href="{{ url_for('add_client') }}">Добавить клиента</a>
+            <a href="{{ url_for('add_building') }}">Добавить объект</a>
+            <a href="{{ url_for('add_deal') }}">Добавить сделку</a>
+            <a href="{{ url_for('remove_client') }}">Удалить клиента</a>
+            <a href="{{ url_for('remove_building') }}">Удалить объект</a>
+            <a href="{{ url_for('remove_deal') }}">Удалить сделку</a>
+            <a href="{{ url_for('add_contract') }}">Добавить договор</a>
+            <a href="{{ url_for('remove_contract') }}">Удалить договор</a>
+        </div>
+
+        <div class="main">
+            <div class="main-content">
+                {% block content %}{% endblock %}
+            </div>
+        </div>
+    </body>
+</html>

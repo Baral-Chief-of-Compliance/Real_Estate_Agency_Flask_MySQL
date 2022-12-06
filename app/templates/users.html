@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Sign In</h1>
+      {% for user in userDetails %}
+    <div><p>id: {{ user[0] }},
+            Фамилия: {{ user[1] }},
+            Имя: {{ user[2] }},
+            Отчество: {{ user[3] }},
+            Номер телефона: {{ user[6] }}
+    </p></div>
+    {% endfor %}
+{% endblock %}

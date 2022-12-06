@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Добавление Сделки</h1>
+    <form action="{{ url_for('add_deal') }}" method="post" autocomplete="off">
+
+		<input name="object_of_real_estate" placeholder="Объект" list="object_of_real_estate" />
+
+		<datalist id = 'object_of_real_estate'>
+					{% for object in object_of_real_estate %}
+						<option value ="{{
+											object[0],
+											object[1],
+											object[2],
+											object[3],
+											object[4],
+											object[5],
+											object[6]
+										}}"/>
+					{% endfor %}
+				</datalist>
+
+				<input name="type_of_deal" placeholder="Тип сделки" list="type_of_deal" />
+
+				<datalist id = 'type_of_deal'>
+					{% for type in type_of_deal %}
+						<option value = '{{ type[0], type[1] }}'/>
+					{% endfor %}
+				</datalist>
+
+				<input type="date" name="d_date" placeholder="Дата" id="d_date" required>
+
+				<input type="submit" value="Добавить сделку">
+    </form>
+{% endblock %}

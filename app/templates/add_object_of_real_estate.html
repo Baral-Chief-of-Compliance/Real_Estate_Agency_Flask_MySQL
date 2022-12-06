@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Добавление объекта недвижимости</h1>
+    <form action="{{ url_for('add_building') }}" method="post" autocomplete="off">
+        <input type="text" name="re_address" placeholder="Адрес" id="re_address" required>
+
+        <input name="clients" list="clients" placeholder="Клиент"/>
+
+        <datalist id = "clients">
+            {% for client in clients %}
+                <option value="{{ client[0], client[1], client[2], client[3], client[4] }}" />
+            {% endfor %}
+        </datalist>
+
+
+        <input name="districts" list="districts" placeholder="Район" />
+
+        <datalist id = "districts">
+            {% for district in districts %}
+                <option value="{{ district[0], district[1] }}" />
+            {% endfor %}
+        </datalist>
+
+
+        <input name="layouts" list="layouts" placeholder="Планировка" />
+
+        <datalist id = "layouts">
+            {% for layout in layouts %}
+                <option value="{{ layout[0], layout[1] }}" />
+            {% endfor %}
+        </datalist>
+
+
+        <input type="text" name="re_amount_rooms" placeholder="Количество комнат" id="re_amount_rooms" required>
+
+
+        <input type="text" name="re_floor" placeholder="Этаж" id="re_floor" required>
+
+
+        <input name="categories" list="categories" placeholder="Категория объекта" />
+
+        <datalist id = "categories">
+            {% for category in categories %}
+                <option value="{{ category[0], category[1] }}" />
+            {% endfor %}
+        </datalist>
+
+
+        <input name="materials" list="materials" placeholder="Материал" />
+
+        <datalist id = "materials">
+            {% for material in materials %}
+                <option value="{{ material[0], material[1] }}" />
+            {% endfor %}
+        </datalist>
+
+        <input type="submit" value="Добавить объект недвижимости">
+    </form>
+
+{% endblock %}
